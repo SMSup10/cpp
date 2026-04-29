@@ -1,0 +1,22 @@
+
+#include <iostream>
+#include<vector>
+using namespace std;
+
+class CRect {
+    int w, h;
+public:
+    CRect(int w = 1, int h = 1) : w(w), h(h) {}
+    void Area() { cout << w * h << endl; }
+    CRect operator+(const CRect& t){
+    return CRect(w+t.w, h+t.h);
+    }
+};
+
+int main() {    
+    CRect a(2,3) , b(1,2);
+    CRect c = a.operator+(b); // CRect c =  a+b;도 가능!!
+    c.Area();
+    return 0;
+    
+}
