@@ -1,0 +1,19 @@
+//기말고사 실기 1번문제
+#include <iostream>
+#include<vector>
+using namespace std;
+
+class CRect {
+    int w, h;
+public:
+    CRect(int w = 1, int h = 1) : w(w), h(h) {}
+    void Area() { cout << w * h << endl; }
+};
+
+int main() {    
+    vector<CRect> v = {CRect (2,3) , CRect(4,5)};
+    v.push_back(CRect(5,6));
+    for (auto& r: v ) r.Area();
+        return 0;
+    
+}
