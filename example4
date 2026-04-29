@@ -1,0 +1,20 @@
+
+#include <iostream>
+
+using namespace std;
+
+class CRect {
+    int w, h;
+public:
+    CRect(int w = 1, int h = 1) : w(w), h(h) {}
+    void Area() { cout << w * h << endl; }
+};
+
+int main() {    
+    CRect we[2] = { CRect(2,3), CRect(4,5) };    
+    for (auto& r : we) { 
+        r.Area();   
+        }    
+        return 0;
+    
+}
