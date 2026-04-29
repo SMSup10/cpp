@@ -1,0 +1,18 @@
+//2. 포인트 및 동적할당
+#include <iostream>
+using namespace std;
+
+class CRect {
+    int w, h;
+public:
+    CRect(int w=1, int h=1) : w(w), h(h) {}
+    void Area() { cout << w * h << endl; }
+};
+
+int main() {
+    CRect* p = new CRect(2, 3);
+    p->Area();
+    delete p;
+    return 0;
+}
+
