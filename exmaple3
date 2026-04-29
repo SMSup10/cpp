@@ -1,0 +1,18 @@
+//3. 스마트포인터 활용
+
+#include <iostream>
+#include <memory>
+using namespace std;
+
+class CRect {
+    int w, h;
+public:
+    CRect(int w=1, int h=1) : w(w), h(h) {}
+    void Area() { cout << w * h << endl; }
+};
+
+int main() {
+    auto p = make_unique<CRect>(2,3);
+    p->Area();
+    return 0;
+}
