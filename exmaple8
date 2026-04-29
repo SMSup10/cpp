@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+// 1. 템플릿 선언 추가
+template <typename T>
+class CRect {
+    T w, h;
+public:
+    // 2. 생성자: T 타입을 사용하여 유연하게 초기화
+    CRect(T w = 1, T h = 1) : w(w), h(h) {}
+
+    // 3. 출력 함수
+    void Area() { cout << w * h << endl; }
+
+    // 4. 연산자 오버로딩: CRect<T> 타입을 명시
+    CRect<T> operator+(const CRect<T>& t) {
+        return CRect<T>(w + t.w, h + t.h);
+    }
+
+    // 5. 소멸자
+    virtual ~CRect() {}
+};
+
+int main() {    
+    // 6. 템플릿 클래스를 사용할 때는 <double> 처럼 타입을 명시해야 합니다.
+    CRect<double> a(2.1, 3.3), b(1.1, 2.2);
+    
+    CRect<double> c = a + b;
+    
+    c.Area(); // 출력: 3.2 * 5.5 = 17.6
+    return 0;
+}
