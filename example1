@@ -1,0 +1,16 @@
+//1. 객체의 생성과 초기화
+#include <iostream>
+using namespace std;
+
+class CRect {
+    int w, h;
+public:
+    CRect(int w, int h) : w(w), h(h) {}
+    void Area() { cout << w * h << endl; }
+};
+
+int main() {
+    CRect me(3, 4);
+    me.Area(); // 출력: 12
+    return 0;
+}
