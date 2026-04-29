@@ -1,0 +1,23 @@
+
+#include <iostream>
+#include<vector>
+using namespace std;
+
+template<typenampe T>
+class CRect {
+    T w, h;
+public:
+    CRect(T w = 1, T h = 1) : w(w), h(h) {}
+    void Area() { cout << w * h << endl; }
+    CRect operator+(const CRect& t){
+    return CRect(w+t.w, h+t.h);
+    }
+};
+
+int main() {    
+    CRect a(2.1,3.3) , b(1.1,2.2);
+    CRect c = a+b;
+    c.Area();
+    return 0;
+    
+}
